@@ -11,6 +11,15 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?v={{ cache_id }}">
     <link rel="icon" href="../static/images/icon.png?v={{ cache_id }}" />
     <title>HBnB</title>
+	<style>
+		 .amenity-item {
+            display: flex;
+            align-items: center;
+        }
+        .amenity-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+	</style>
   </head>
   <body>
     <header>
@@ -42,8 +51,9 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li>
-			<input type="checkbox" id="amenity-{{ loop.index }}" name="amenity-{{ loop.index }}">
+	      <li class="amenity-item>">
+			<input type="checkbox" data-id=":amenity_id" data-name=":amenity_name">
+			<label for="amenity-{{ loop.index }}">{{ amenity.name }}</label>
 			{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
